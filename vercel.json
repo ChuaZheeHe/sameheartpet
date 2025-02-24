@@ -1,0 +1,10 @@
+{
+    "rewrites": [
+      { "source": "/Footer", "destination": "/" },
+      { "source": "/WhyChooseUs", "destination": "/" },
+      { "source": "/Video", "destination": "/" },
+      { "source": "/Price", "destination": "/" },
+      { "source": "/Time", "destination": "/" },
+      { "source": "/Comment", "destination": "/" }
+    ]
+  }
