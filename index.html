@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href="img/logowithoutbg.png" rel="icon">
+  <link href="img/logowithoutbg.png" rel="apple-touch-icon">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="01.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&family=Sigmar&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&family=Sigmar&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+<title>Same Heart Pet Hotel & Boarding</title>
+<meta property="og:title" content="Same Heart Pet Hotel & Boarding">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PL7BXTKX');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body>
+
+<div class="banner">
+  <br>
+  <div class="navbar01">
+    <img src="img/Title.png" class="logoimg">
+    <div class="button-group">
+        <button type="button" class="btn btn-secondary"><a href="https://maps.app.goo.gl/C95bb1UAfJZi8gek6" target="_blank" style="text-decoration: none; color: rgb(255, 255, 255);">Our Location</a></button>
+        <button type="button" class="btn btn-success"><a href="https://wa.me/60129667105" target="_blank" style="text-decoration: none; color: rgb(255, 255, 255);">WhatsApp Us</a></button>
+    </div>
+</div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col">
+        <img src="img/banner.png">
+      </div>
+      <div class="col">
+        <h4 class="sigmar-regular">
+          Pet Hotel and Boarding
+        </h4>
+        <hr>
+        <h1 class="ml11">
+          <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters" id="text"></span>
+          </span>
+        </h1>
+        <hr>
+        <h3 class="sigmar-regular">
+          <a href="https://wa.me/60129667105" style="text-decoration: underline; text-decoration-color: red;"><bold><font color="red">Book Now!</font></bold></a> Enjoy your trip, worry-free!
+        </h3>
+      </div>
+    </div>
+  </div>
+  <br><br>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script>
+  const textElement = document.getElementById('text');
+  const sentences = [
+    "Worried about your pets while traveling?",
+    "Too busy to care for your pets?"
+  ];
+  let index = 0;
+
+  function animateText() {
+    // 按单词拆分并包裹每个单词
+    textElement.innerHTML = sentences[index]
+      .split(' ')
+      .map(word => `<span class='word'>${word}</span>`)
+      .join(' ');
+
+    // 重新显示文本，避免 display: none 影响动画
+    document.querySelector(".ml11").style.opacity = "1";
+
+    // 运行 Anime.js 动画
+    anime.timeline()
+      .add({
+        targets: '.ml11 .line',
+        scaleY: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 100
+      })
+      .add({
+        targets: '.ml11 .line',
+  translateX: function() {
+    const textWidth = document.querySelector('.ml11 .letters').getBoundingClientRect().width;
+
+    // 检查屏幕宽度
+    const extraOffset = window.innerWidth <= 768 ? 40 : 10;
+
+    // 返回动态的 translateX 值
+    return [0, textWidth + extraOffset];
+  },
+  easing: "easeOutExpo",
+  duration: 700,
+  delay: 100
+      })
+      .add({
+        targets: '.ml11 .word', // 这里改为 .word，按单词出现
+        opacity: [0, 1],
+        translateY: [20, 0], // 增加 Y 轴动画，单词从下方浮现
+        easing: "easeOutExpo",
+        duration: 1200,
+        offset: '-=775',
+        delay: (el, i) => 150 * (i + 1) // 每个单词依次出现
+      })
+      
+      .add({
+        targets: '.ml11',
+        opacity: 0, // 让整段文字淡出
+        duration: 1200,
+        easing: "easeOutExpo",
+        delay: 2000, // 文字停留 2 秒后才开始消失
+        complete: function() {
+          index = (index + 1) % sentences.length; // 切换句子
+          setTimeout(animateText, 0); // 延迟 500ms 后再次播放动画
+        }
+      });
+  }
+
+  animateText(); // 启动动画
+</script>
+
+<section id="WhyChooseUs">
+<!-- Service Card -->
+<div class="sevice">
+  <br><br>
+  <h1 class="sigmar-regular" align="center">Why Choose Us</h1><br><br>
+  <div class="row row-cols-2 row-cols-md-4 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/01.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Prevent Disease and Infections</h2>
+        <p class="card-text">ensuring a safe and healthy stay for your pet</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/02.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Temperature & Comfort</h2>
+        <p class="card-text">Air-conditioned rooms with temperature control, keeping your cat cool, relaxed</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/03.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Prevention Measures to Keep Your Pet Safe From Fleas and Lice</h2>
+        <p class="card-text">Avoiding infection risks for animals</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/04.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Pet-Friendly Environment</h2>
+        <p class="card-text">Experienced staff and owners who genuinely care for your pet, ensuring they feel loved</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/05.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Food hygiene</h2>
+        <p class="card-text">100% filtered water & fresh meals, keeping your cat healthy and hydrated, free from bacteria and viruses.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/06.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Safe & Quiet Cat-Only Space</h2>
+        <p class="card-text">canine free areas</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/07.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">High security</h2>
+        <p class="card-text">24/7 High-Security Monitoring
+          ensuring your cat’s safety and protection at all times.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/08.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Daily Updates at Whatsapp</h2>
+        <p class="card-text">We send photos & videos of your pets every day</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/09.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Professional Pet Care & Health Knowledge</h2>
+        <p class="card-text">Our trained staff can monitor health conditions, ensuring your cat stays happy and in good shape</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/10.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Daily Play & Engagement</h2>
+        <p class="card-text">Cats receive daily playtime & stimulation, preventing boredom, stress, and loneliness.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/11.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Regular & Healthy Feeding Routine</h2>
+        <p class="card-text">We feed your cat on schedule, ensuring proper nutrition</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/service/12.png" class="card-img-top" alt="...">
+      <div class="card-body" align="center">
+        <h2 class="bebas-neue-regular">Convenient Online Booking</h2>
+        <p class="card-text"> Easily book via WhatsApp to secure your spot</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section id="Video">
+<hr><br><br>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <video width="80%" controls autoplay muted>
+    <source src="Same_Heart_Website_Video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+</section>
+
+<section id="Price">
+<br><br><br>
+<hr><br><br>
+<h1 class="sigmar-regular" align="center">Our Price</h1><br>
+<div class="price" align="center">
+  <div class="card w-100 w-md-75">
+    <div class="card-body">
+      <table class="table table-striped-columns table-hover">
+        <thead>
+          <tr>
+            <th scope="col" width="50%">ROOM TYPE</th>
+            <th scope="col">Price/day</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <td>Feline</td>
+            <td>RM30</td>
+          </tr>
+          <tr>
+            <td>Small Exotic</td>
+            <td>RM35</td>
+          </tr>
+          <tr>
+            <td>Canine</td>
+            <td>RM45</td>
+          </tr>
+          <tr>
+            <td>Large Exotic</td>
+            <td>RM45</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="price" align="center">
+  <div class="card w-100 w-md-75">
+    <div class="card-body">
+      <table class="table table-striped-columns table-hover">
+        <thead>
+          <tr>
+            <th scope="col" width="50%">Grooming Charges</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <td>Feline Maintainence Grooming</td>
+            <td>RM30</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Feline Short Hair Full Grooming</td>
+            <td>RM45</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Feline Long Hair Full Grooming</td>
+            <td>RM55</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Feline Short Hair Lion Cut</td>
+            <td>RM70</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Feline Long Hair Lion Cut</td>
+            <td>RM80</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="price" align="center">
+  <div class="card w-100 w-md-75">
+    <div class="card-body">
+      <table class="table table-striped-columns table-hover">
+        <thead>
+          <tr>
+            <th scope="col" width="50%">Optional Add-On For Hotel Guest</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <td>Air conditioned room</td>
+            <td><font color="red"><b>FOC</b></font></td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td>WhatsApp Daliy Update<br><i>(Take photo or Shot video)</i></td>
+            <td><font color="red"><b>FOC</b></font></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="Time">
+<hr><br><br>
+<h1 class="sigmar-regular" align="center">Operation Time</h1><br>
+<div class="price" align="center">
+  <div class="card w-100 w-md-75">
+    <div class="card-body">
+      <table class="table table-striped-columns table-hover">
+        <thead>
+          <tr>
+            <th scope="col" width="50%">Date</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <td>MONDAY - SUNDAY (Everyday)</td>
+            <td>10am - 6pm</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row" align="center">
+  <div class="whatsapp col-md-12 col-12">
+    <p class="bebas-neue-regular" style="margin-top: 10px;font-size: 35px;"><font color="red">DM via whatsapp to confirm the spot</font></p>  
+    <button type="button" class="btn btn-success btn-lg" style="width: 70%;"><a href="https://wa.me/60129667105" target="_blank" style="text-decoration: none; color: rgb(255, 255, 255);font-size: 40px;">WhatsApp Us</a></button>
+  </div>
+</div>
+<br>
+</section>
+
+<section id="Comment">
+<div class="comment">
+  <hr><br><br>
+<h1 class="sigmar-regular" align="center">Comment & Review</h1><br>
+<div class="wrapper">
+  <div class="row row-cols-1 row-cols-md-1 g-3">
+    <div class="col">
+      <h3>
+        Ina Chong
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+      </h3>
+      <p class="roboto-uniquifier" style="margin-top: 10px;">
+        Sarvesh took great care of my two cats. They were so happy they didn’t want to go home. Highly recommended!
+        <br><br>Source: Google Review
+      </p>
+    </div>
+
+    <div class="col">
+      <h3>
+        Mia Zambri
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+            </h3>
+      <p class="roboto-uniquifier">
+        Sarveshkumar is great with all animals! With my busy schedule, his boarding is my go-to for my cats, especially when they need meds twice a day. He can pill them easily and always updates me with videos!
+        <br><br>Source: Google Review
+      </p>
+    </div>
+
+    <div class="col">
+      <h3>
+        Sherry Ying
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+            </h3>
+      <p class="roboto-uniquifier">
+        I'm really thankful to Sarvesh for his attentive care for my cat. I’m now a loyal customer, happy with the care and daily updates. The pricing is very reasonable too. Highly recommended!      
+        <br><br>Source: Google Review
+      </p>
+        
+      </div>
+
+      <div class="col">
+      <h3>
+        Kishore Nair
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+            </h3>
+      <p class="roboto-uniquifier">
+        Fantastic job by the owner! Really took good care of my pets and is very detailed oriented in his approach. He's also very responsive. Keep up the good work!      
+        <br><br>Source: Google Review
+      </p>
+        
+      </div>
+
+    <div class="col">
+      <h3>
+        Rony Khong
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+            </h3>
+      <p class="roboto-uniquifier">
+        Highly recommended. I sent my pet over while I was on vacation. Really professional service provided. They answered all my questions and always kept me updated on my pet’s status.
+        <br><br>Source: Google Review
+      </p>
+    </div>
+
+    <div class="col">
+      <h3>
+        Loga Pravin
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+            </h3>
+      <p class="roboto-uniquifier">
+        Brought my hamster here. The place has a very nice enclosure of their own. They also always updated me and even let me whatsapp video call my hamster :D. They also do pet sitting.
+        <br><br>Source: Google Review
+      </p>
+    </div>
+  </div>
+  <br><br><br>
+</div>
+</div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.pathname === "/Footer") {
+      const footerSection = document.getElementById("Footer");
+      if (footerSection) {
+        footerSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    if (window.location.pathname === "/WhyChooseUs") {
+      const WhySection = document.getElementById("WhyChooseUs");
+      if (WhySection) {
+        WhySection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    if (window.location.pathname === "/Price") {
+      const PriceSection = document.getElementById("Price");
+      if (PriceSection) {
+        PriceSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    if (window.location.pathname === "/Time") {
+      const TimeSection = document.getElementById("Time");
+      if (TimeSection) {
+        TimeSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    if (window.location.pathname === "/Video") {
+      const VideoSection = document.getElementById("Video");
+      if (VideoSection) {
+        VideoSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    if (window.location.pathname === "/Comment") {
+      const CommentSection = document.getElementById("Comment");
+      if (VideoSection) {
+        VideoSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  });
+</script>
+
+<section id="Footer">
+<footer class="last">
+  <div class="container01 text-center">
+    <div class="row align-items-center">
+      <div class="col-md-3 col-12">
+        <br>
+        <div class="footerlogo">
+          <img src="img/Title.png" class="logoimg">
+        </div>
+        <br>
+        <div class="address">
+            <p>
+              First floor, No. 76, Jalan SS 14/1, Ss 14,<br>
+               47500 Subang Jaya, Selangor
+            </p>
+          </div>
+      </div>
+      <div class="whatsapp col-md-6 col-12">
+        <p class="bebas-neue-regular" style="margin-top: 10px;font-size: 35px;"><font color="red"><font size="50px">Book Now </font></font><br> We’ll Reserve Your Spot for you at Hari Raya Season</p>  
+        <button type="button" class="btn btn-success btn-lg" style="width: 70%;"><a href="https://wa.me/60129667105" target="_blank" style="text-decoration: none; color: rgb(255, 255, 255);font-size: 40px;">WhatsApp Us</a></button>
+        <p></p>
+        
+      </div>
+      <div class="col-md-3 col-12">
+        <h5>Information</h5>
+        <div class="waze"><button type="button" class="wazebtn btn btn-secondary"><a href="https://maps.app.goo.gl/C95bb1UAfJZi8gek6" target="_blank" style="text-decoration: none; color: rgb(255, 255, 255);">Our Location</a></button></div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+</footer>
+</section>
+
+
+
+<button id="mainBtn" class="floating-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+    <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15"/>
+  </svg>
+</button>
+
+<div id="popup" class="popup">
+  我是谁谁谁
+  <button id="closeBtn" class="close-btn">×</button>
+</div>
+
+<button id="extraBtn" class="extra-btn"><a href="https://wa.me/60129667105" target="_blank" style="text-decoration: none; color: rgb(255, 255, 255);">WhatsApp Us</a></button>
+<button id="extraBtn2" class="extra-btn-2">Call Us</button>
+
+<script>
+    document.getElementById("mainBtn").addEventListener("click", function() {
+        var btn1 = document.getElementById("extraBtn");
+        var btn2 = document.getElementById("extraBtn2");
+
+        // 切换 class 以改变透明度
+        btn1.classList.toggle("show");
+        btn2.classList.toggle("show");
+    });
+
+    window.onload = function() {
+            let popup = document.getElementById("popup");
+            let mainBtn = document.getElementById("mainBtn");
+            let closeBtn = document.getElementById("closeBtn");
+
+            // 1 秒后显示弹窗
+            let popupTimeout = setTimeout(function() {
+                popup.classList.add("show");
+            }, 1000);
+
+            // 点击 + 按钮关闭弹窗
+            mainBtn.addEventListener("click", function() {
+                popup.classList.remove("show");
+            });
+
+            // 点击 × 关闭弹窗
+            closeBtn.addEventListener("click", function() {
+                popup.classList.remove("show");
+            });
+        };
+</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PL7BXTKX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+</body>
+</html>
