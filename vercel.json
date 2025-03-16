@@ -1,10 +1,10 @@
 {
-    "rewrites": [
-      { "source": "/Footer", "destination": "/" },
-      { "source": "/WhyChooseUs", "destination": "/" },
-      { "source": "/Video", "destination": "/" },
-      { "source": "/Price", "destination": "/" },
-      { "source": "/Time", "destination": "/" },
-      { "source": "/Comment", "destination": "/" }
-    ]
-  }
+  "redirects": [
+    { "source": "/Footer", "destination": "/", "permanent": true },
+    { "source": "/WhyChooseUs", "destination": "/", "permanent": true },
+    { "source": "/Video", "destination": "/", "permanent": true },
+    { "source": "/Price", "destination": "/", "permanent": true },
+    { "source": "/Time", "destination": "/", "permanent": true },
+    { "source": "/Comment", "destination": "/", "permanent": true }
+  ]
+}
